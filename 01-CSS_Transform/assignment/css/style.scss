@@ -1,3 +1,160 @@
+@import 'colors';
+@mixin image-shadow {
+    box-shadow: 0 0 2px 1px rgba(47,79,79,.2);
+}
+
+body {
+    font-family: Montserrat, Arial, sans-serif;
+    margin: 1rem;
+}
+
 h1 {
-  color: dodgerblue;
+    font-family: "Barlow Condensed", Arial, sans-serif;
+    font-weight: bold;
+    color: $main-header;
+}
+
+header {
+    & i:nth-of-type(1) {
+    color: rgb(255,255,255);
+    transform: scale(1.5);
+    animation: changeColor 5s ease 0s 1;
+    }
+    & i:nth-of-type(2) {
+    color: rgb(255,255,255);
+    transform: scale(1.5);
+    animation: changeColor 5s ease 1s;
+    }
+    & i:nth-of-type(3) {
+    color: rgb(255,255,255);
+    transform: scale(1.5);
+    animation: changeColor 5s ease 3s;
+    }
+    & i:nth-of-type(4) {
+    color: rgb(255,255,255);
+    transform: scale(1.5);
+    animation: changeColor 5s ease 5s 1;
+    }
+}
+
+/*sets start and end colors for the changeColor animination*/
+@keyframes changeColor {
+    from{
+         color: rgba(47,79,79,.8);
+    }
+     to {
+         color: rgba(47,79,79,.2);
+    }
+}
+
+h3 {
+    font-family: Domine, serif;
+    font-weight: lighter;
+    font-style: italic;
+    color: $main-header;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav {
+    background-color: $nav-background;
+    padding: 10px 20px;
+    & a {
+    color: $nav;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bold;
+    }
+    & a:hover {
+        color: $nav-hover;
+    }
+}
+
+article {
+    padding: 20px 30px;
+}
+
+h2 {
+    color: $sub-header;
+}
+
+ul li {
+    font-size: 1.1em;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 14rem;
+    width: 14rem;
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    & a {
+        font-size: 0.8em;
+    }
+    & a:visited {
+        color: $links-visited; 
+    }
+    & a:hover {
+        color: $links-hover
+    }
+}
+
+img {
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 5px;
+    @include image-shadow; /*mixin used to ensure box-shadow consistency across all images used*/
+    transition: transform 1s linear; /*controls speed for the scaling transform*/
+}
+
+.img-container {
+    position: relative; /*for the overlap, parent element should have relative position*/
+}
+
+.fa-expand {
+    position: absolute; /*child element of overlay should have absolute position*/
+    right: 55px;
+    top: 10px;
+    padding: 2px;
+    background-color: rgba(255,255,255,.5); /*lighter background makes icon stand out against photo background*/
+    border-radius: 5%;
+    height: 15px;
+    width: 15px;
+    display: flex; /*flex container used to center the icon*/
+    justify-content: center; /*center icon horizontally*/
+    align-items: center; /*center icon vertically*/
+    cursor: pointer;
+    z-index:1; /*puts icon on top of the image so ther hover is less jittery*/
+    &:hover {
+        opacity: 0; /*hides the icon after it's hovered on*/
+    }
+}
+
+/*expands image size 2.5 times when hovering over the expand icon*/
+.fa-expand:hover + img {
+    transform: scale(2.5);
+}
+
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+footer {
+    font-size:small;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.about-picture {
+    border-radius: 60%;
+    @include image-shadow; /*mixin used to ensure box-shadow consistency across all images used*/
+    margin: 1rem;
 }
