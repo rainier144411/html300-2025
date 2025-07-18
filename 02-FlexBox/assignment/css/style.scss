@@ -4,3 +4,71 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+/*centers text and makes it white*/
+@mixin center-white-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.grid {
+    min-block-size: 100vh; /*sets minimum height of grid to 100% the viewport so the grid takes up the whole height of screen*/
+    display: grid;
+    grid-template: minmax(100px, auto) minmax(50px, auto) 1fr minmax(100px,auto) / 1fr 2fr; /* 4 rows (the 1fr in combination with min-block-size above makes the row take up the all leftover space) / 2 columns*/
+    grid-template-areas:
+        "header header" /*header element takes both columns in first row*/
+        "nav nav" /*nav element takes both columns in second row*/
+        "sidebar main" /*sidebar is the first column and takes 1fr, main is the second column and takes 2fr in third row*/
+        "footer footer"; /*footer element takes both columns in fourth row*/
+    @include media-query(med) { /*when the screen size is larger than 40em, the grid will adjust into one column*/
+        grid-template: auto / auto;
+        grid-template-areas:
+            "header"
+            "nav"
+            "sidebar"
+            "main"
+            "footer";
+    }
+}
+
+header {
+    background: $header; /*sets background color using the settings.variables partials file*/
+    grid-area: header; /*see grid-template-areas, header element takes both columns in first row*/
+    @include center-white-text;
+}
+
+nav {
+    background: $navigation; /*sets background color using the settings.variables partials file*/
+    grid-area: nav; /*see grid-template-areas, nav element takes both columns in second row*/
+  & li {
+        list-style: none; /*removes bullet points from list*/
+    }
+  & ul {
+        display: flex; /*make navigation options display horizontally instead of vertically*/
+        flex-wrap: wrap;
+        justify-content: space-around;
+        color: white;
+        @include media-query(med) { /*when the screen size is larger than 40em, the nav will adjust into one column*/
+            display: block;
+        }
+    }
+}
+
+.sidebar {
+    background: $sidebar; /*sets background color using the settings.variables partials file*/
+    grid-area: sidebar; /*see grid-template-areas, sidebar is the first column and takes 1fr in the third row*/
+    @include center-white-text;
+}
+
+.main {
+    background: $main; /*sets background color using the settings.variables partials file*/
+    grid-area: main; /*see grid-template-areas, main is the second column and takes 2fr in third row*/
+    @include center-white-text;
+}
+
+footer {
+    background: $footer; /*sets background color using the settings.variables partials file*/
+    grid-area: footer; /*see grid-template-areas, footer element takes both columns in fourth row*/
+    @include center-white-text;
+}
