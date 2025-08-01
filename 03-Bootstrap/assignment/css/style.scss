@@ -5,13 +5,9 @@
 @import 'components.content';
 @import 'colors';
 
-@mixin image-shadow {
-    box-shadow: 0 0 2px 1px rgba(47,79,79,.2);
-}
-
-body {
+.main {
     font-family: Montserrat, Arial, sans-serif;
-    margin: 1rem;
+    margin: 2rem;
 }
 
 h1 {
@@ -170,13 +166,21 @@ footer {
 
 .about-picture {
     border-radius: 60%;
-    @include image-shadow; /*mixin used to ensure box-shadow consistency across all images used*/
     margin: 1rem;
 }
 
 #gallery {
-    margin: 4rem;
+    padding: 20px 30px;
     & h2 {
         margin-bottom: 2rem;
     }
+}
+
+#bio {
+    display: flex;
+    padding-right: 5rem;
+}
+
+.about-me-grid {
+        padding: 20px 30px;
 }
