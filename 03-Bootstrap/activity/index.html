@@ -14,7 +14,7 @@
       
       <!--https://getbootstrap.com/docs/4.0/components/tooltips/-->
       <span id="tooltip" class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Click the other button first.">
-        <button id="submitButton" class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Submit</button>
+        <button id="submitButton" class="btn btn-primary" style="pointer-events: none;" type="submit" disabled>Submit</button>
       </span>
 
     </main>
@@ -33,7 +33,9 @@
 
       function toggleButtons() {
         submitButton.removeAttribute('disabled'); // Enable the submit button
-        $('[data-toggle="tooltip"]').tooltip('hide');; // Remove the tooltip
+        //$("#tooltip").tooltip('hide');; // Remove the tooltip
+        tooltipElement.replaceWith(...tooltip.childNodes);
+        submitButton.removeAttribute('style'); 
       };
 </script>
 
