@@ -34,8 +34,10 @@
       function toggleButtons() {
         submitButton.removeAttribute('disabled'); // Enable the submit button
         //$("#tooltip").tooltip('hide');; // Remove the tooltip
-        tooltipElement.replaceWith(...tooltip.childNodes);
-        submitButton.removeAttribute('style'); 
+        //tooltipElement.title = 'Submit'; //chnage toottip to say submit
+        tooltipElement.removeAttribute("title"); //removes tooltip
+        //tooltipElement.replaceWith(...tooltip.childNodes); //removes span element without removing the button element within it
+        submitButton.removeAttribute('style'); //removes pointer-event so button is clickable
       };
 </script>
 
