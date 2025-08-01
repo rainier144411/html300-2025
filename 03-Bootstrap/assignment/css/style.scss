@@ -14,7 +14,6 @@
 h1 {
     font-family: "Barlow Condensed", Arial, sans-serif;
     font-weight: bold;
-    color: $main-header;
 }
 
 header {
@@ -50,11 +49,15 @@ header {
     }
 }
 
+/*changes background color of the default bootstrap navbar*/
+.navbar {
+    background-color: $nav-background !important;
+}
+
 h3 {
     font-family: Domine, serif;
     font-weight: lighter;
     font-style: italic;
-    color: $main-header;
 }
 
 .header-container {
@@ -63,26 +66,8 @@ h3 {
     gap: 20px;
 }
 
-nav {
-    background-color: $nav-background;
-    padding: 10px 20px;
-    & a {
-    color: $nav;
-    text-decoration: none;
-    font-size: larger;
-    font-weight: bold;
-    }
-    & a:hover {
-        color: $nav-hover;
-    }
-}
-
 article {
     padding: 20px 30px;
-}
-
-h2 {
-    color: $sub-header;
 }
 
 img {
@@ -95,7 +80,7 @@ img {
 
 .fa-expand {
     position: absolute; /*child element of overlay should have absolute position*/
-    right: 10px;
+    right: 65px;
     top: 10px;
     padding: 2px;
     background-color: rgba(255,255,255,.5); /*lighter background makes icon stand out against photo background*/
@@ -112,16 +97,14 @@ img {
     }
 }
 
-
-
 /*expands image size 2.5 times when hovering over the expand icon*/
-.fa-expand:hover + img {
+.fa-expand:hover ~ img {
     transform: scale(2.5);
 }
 
 /*hides icon during animation - https://www.youtube.com/watch?v=ocl4eN9IrD0*/
-.fa-expand:not(:hover , :focus){
-    animation: z-index-hack 2000ms;
+.fa-expand:not(:hover){
+    animation: z-index-hack 1000ms;
 }
 
 @keyframes z-index-hack {
@@ -155,6 +138,7 @@ img {
 }
 
 footer {
+    margin-top: 40px;
     font-size:small;
     display: flex;
     align-items: center;
@@ -167,7 +151,6 @@ footer {
 
 .about-picture {
     border-radius: 60%;
-    //min-width: 300px;
 }
 
 #gallery {
@@ -177,10 +160,18 @@ footer {
     }
 }
 
-#bio {
-    //padding-right: 5rem;
-}
-
 .about-me-grid {
         padding: 20px 30px;
+        & #bio {
+            padding-right: 4rem;
+        }
+}
+
+.recipes-list section {
+    padding-top: 5rem;
+}
+
+/*changes the background color on the expanded accordian item to match navbar background*/
+.accordion-button:not(.collapsed) {
+    background-color: $nav-background !important;
 }

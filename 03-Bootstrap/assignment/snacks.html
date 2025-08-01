@@ -22,7 +22,7 @@
             <h3>A guide to my favorite hikes and backpacking trips and yummy bites to eat along the trail.</h3>
             
             <!--Collapsable Bootstrap Navbar-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg">
                 <button
                 class="navbar-toggler"
                 data-bs-toggle="collapse"
@@ -52,6 +52,7 @@
                 </div>
             </nav>
 
+            <!--Bootstrap accordian-->
             <article>
                 <h2>Types of Meals</h2>
                 <div class="accordion" id="snackTypes">
@@ -82,7 +83,7 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Simple Stove-top Meals
+                            Simple Stovetop Meals
                         </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#snackTypes">
@@ -105,24 +106,37 @@
                 </div>
             </article>
 
-            <section>
-                <h2>Snacks</h2>
-                <div class="list-group list-group-flush">
-                    <a href="https://www.freshoffthegrid.com/vegan-smores-granola-bar/" class="list-group-item list-group-item-action">S'mores Granola Bars</a>
-                    <a href="https://www.freshoffthegrid.com/mango-strawberry-fruit-leathers/" class="list-group-item list-group-item-action">Mango Strawberry Fruit Leather</a>
-                </div>
-            </section>
-
-            <section>
-                <h2>No Cook Meals</h2>
-                <div class="list-group">
-                    <div class="col-lg-9 col-md-8 col-sm-12 bg-info text-white">
-                            <a href="https://www.freshoffthegrid.com/vegan-smores-granola-bar/" class="list-group-item list-group-item-action">S'mores Granola Bars</a>
-                            <a href="https://www.freshoffthegrid.com/mango-strawberry-fruit-leathers/" class="list-group-item list-group-item-action">Mango Strawberry Fruit Leather</a>
+            <!--Bootstrap list-->
+            <div class="recipes-list">
+                <section>
+                    <h2>Snacks</h2>
+                    <div class="list-group list-group-flush">
+                        <a href="https://www.freshoffthegrid.com/vegan-smores-granola-bar/" class="list-group-item list-group-item-action">S'mores Granola Bars</a>
+                        <a href="https://www.freshoffthegrid.com/mango-strawberry-fruit-leathers/" class="list-group-item list-group-item-action">Mango Strawberry Fruit Leather</a>
                     </div>
-            </section>
-                    
+                </section>
 
+                <section>
+                    <h2>No Cook Meals</h2>
+                    <div class="list-group list-group-flush">
+                        <a href="https://www.freshoffthegrid.com/cashew-chicken-salad-wrap/" class="list-group-item list-group-item-action">Cashew Chicken Salad Wraps</a>
+                        <a href="https://www.freshoffthegrid.com/cold-soaked-pasta-salad/" class="list-group-item list-group-item-action">Cold Soaked Pasta Salad</a>
+                </section>
+
+                <section>
+                    <h2>Simple Stovetop Meals</h2>
+                    <div class="list-group list-group-flush">
+                        <a href="https://www.the-hungry-hiker.com/2023/03/05/cheap-easy-backpacking-meal-ideas/" class="list-group-item list-group-item-action">BBQ Mac N Cheese</a>
+                        <a href="https://blackwoodspress.com/blog/14385/backpacking-dinner-recipes/?srsltid=AfmBOopwdsocXX31SXS8GO8bBBfxg9zufytmP6Tkn3EAHAOsDMYlZzif" class="list-group-item list-group-item-action">Cheesy Bacon Mashed Potatoes</a>
+                </section>
+
+                <section>
+                    <h2>Dehydrated Meals</h2>
+                    <div class="list-group list-group-flush">
+                        <a href="https://trail.recipes/recipes/unstuffed-peppers/" class="list-group-item list-group-item-action">Unstuffed Peppers</a>
+                        <a href="https://www.backpackingchef.com/backpacking-recipe-mexican-beef-rice.html" class="list-group-item list-group-item-action">Mexican Beef & Rice Bowls</a>
+                </section>
+            </div>
 
         <footer>
             <i class="fa-solid fa-mountain-sun"></i>

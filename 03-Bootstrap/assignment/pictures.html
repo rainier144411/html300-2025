@@ -22,7 +22,7 @@
         <h3>A guide to my favorite hikes and backpacking trips and yummy bites to eat along the trail.</h3>
         
         <!--Collapsable Bootstrap Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg">
             <button
               class="navbar-toggler"
               data-bs-toggle="collapse"
@@ -52,29 +52,30 @@
             </div>
         </nav>
 
+        <!--Gallery showcases a grid layout as well as responsive bootstrap images and popovers-->
         <div id="gallery">
             <h2>Pictures From My Hikes</h2>
             <div class="row">
-                <img src="images/hike-7.jpg" class="col-lg-6 img-fluid rounded mb-4" alt="Image of tall, snowy mountain peaks on a cloudy day.">
-                <img src="images/hike-9.jpg" class=" col-lg-6 img-fluid rounded mb-4" alt="Image of torquoise river flowing through a green mountainous lanscape.">
+                <img src="images/hike-7.jpg" class="col-lg-6 img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Rugged peaks of Slovenia" alt="Image of tall, snowy mountain peaks on a cloudy day.">
+                <img src="images/hike-9.jpg" class=" col-lg-6 img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Socha Valley in Slovenia" alt="Image of torquoise river flowing through a green mountainous lanscape.">
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <img src="images/hike-1.jpg" class="img-fluid rounded mb-4" alt="Image of vast mountain ridges and a deep valley with trees.">
-                    <img src="images/hike-3.jpg" class="img-fluid rounded mb-4" alt="Image of a person looking into a large rocky canyon.">
+                    <img src="images/hike-1.jpg" class="img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Views from Silver Star Mountain in Washington" alt="Image of vast mountain ridges and a deep valley with trees.">
+                    <img src="images/hike-3.jpg" class="img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Slot canyon in Arizona" alt="Image of a person looking into a large rocky canyon.">
                 </div>
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <img src="images/hike-4.jpg" class="img-fluid rounded mb-4" alt="Image of a waterfall with lush surroundings and a small bridge over it.">
-                    <img src="images/hike-2.jpg" class="img-fluid rounded mb-4" alt="Image of pink flower growing out of the rocks with mountains and a lake in the background.">
+                    <img src="images/hike-4.jpg" class="img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Trail of Ten Falls in Oregon" alt="Image of a waterfall with lush surroundings and a small bridge over it.">
+                    <img src="images/hike-2.jpg" class="img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Views from Harry's Ridge Trail on Mount Saint Helens" alt="Image of pink flower growing out of the rocks with mountains and a lake in the background.">
                 </div>
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <img src="images/hike-6.jpg" class="img-fluid rounded mb-4" alt="Image of a mountain lake with bright green grasses growing around it's edge.">
-                    <img src="images/hike-8.jpg" class="img-fluid rounded mb-4" alt="Image of an owl sitting on a tree branch.">
+                    <img src="images/hike-6.jpg" class="img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Views from Stuart Lake in the Enchantments in Washington" alt="Image of a mountain lake with bright green grasses growing around it's edge.">
+                    <img src="images/hike-8.jpg" class="img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="An owl spotted near our campsite at Pardise Creek" alt="Image of an owl sitting on a tree branch.">
                 </div>
             </div>
             <div class="row">
-                <img src="images/hike-5.jpg" class="col-lg-6 img-fluid rounded mb-4" alt="Image of a large waterfall and a trail behind it.">
-                <img src="images/hike-10.jpg" class="col-lg-6 img-fluid rounded mb-4" alt="Image of two tents amongst black, ashy rocks with a pink sky in the background.">
+                <img src="images/hike-5.jpg" class="col-lg-6 img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Trail of Ten Falls in Oregon" alt="Image of a large waterfall and a trail behind it.">
+                <img src="images/hike-10.jpg" class="col-lg-6 img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Camping at Craters of the Moon in Idaho" alt="Image of two tents amongst black, ashy rocks with a pink sky in the background.">
             </div>
         </div>
 
@@ -87,5 +88,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
+    <!--Script needed to initialize bootstrap popovers (https://getbootstrap.com/docs/5.0/components/popovers/)-->
+    <script>
+      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+      })
+    </script>
     </body>
 </html>
