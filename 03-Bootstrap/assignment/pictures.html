@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Julianne's Portfolio Homepage</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/fa8b81c433.js" crossorigin="anonymous"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        </style>
+    </head>
+
+    <body>
+      <div class="main">
+        <header class="header-container">
+            <h1>Outdoor Adventures on Foot</h1>
+            <!-- Animated foot prints when page loads-->
+            <i class="fa-solid fa-shoe-prints"></i><i class="fa-solid fa-shoe-prints"></i><i class="fa-solid fa-shoe-prints"></i><i class="fa-solid fa-shoe-prints"></i>
+        </header>
+        <h3>A guide to my favorite hikes and backpacking trips and yummy bites to eat along the trail.</h3>
+        
+        <!--Collapsable Bootstrap Navbar-->
+        <nav class="navbar navbar-expand-lg">
+            <button
+              class="navbar-toggler"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item px-3">
+                  <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item px-3">
+                  <a class="nav-link active" aria-current="page" href="#">Pictures</a>
+                </li>
+                <li class="nav-item px-3">
+                  <a class="nav-link" href="snacks.html">Snacks & Meals</a>
+                </li>
+                <li class="nav-item px-3">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+
+              </ul>
+            </div>
+        </nav>
+
+        <!--Gallery showcases a grid layout as well as responsive bootstrap images and popovers-->
+        <div id="gallery">
+            <h2>Pictures From My Hikes</h2>
+            <div class="row">
+                <img src="images/hike-7.jpg" class="col-lg-6 img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Rugged peaks of Slovenia" alt="Image of tall, snowy mountain peaks on a cloudy day.">
+                <img src="images/hike-9.jpg" class=" col-lg-6 img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Socha Valley in Slovenia" alt="Image of torquoise river flowing through a green mountainous lanscape.">
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <img src="images/hike-1.jpg" class="img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Views from Silver Star Mountain in Washington" alt="Image of vast mountain ridges and a deep valley with trees.">
+                    <img src="images/hike-3.jpg" class="img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Slot canyon in Arizona" alt="Image of a person looking into a large rocky canyon.">
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <img src="images/hike-4.jpg" class="img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Trail of Ten Falls in Oregon" alt="Image of a waterfall with lush surroundings and a small bridge over it.">
+                    <img src="images/hike-2.jpg" class="img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Views from Harry's Ridge Trail on Mount Saint Helens" alt="Image of pink flower growing out of the rocks with mountains and a lake in the background.">
+                </div>
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <img src="images/hike-6.jpg" class="img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Views from Stuart Lake in the Enchantments in Washington" alt="Image of a mountain lake with bright green grasses growing around it's edge.">
+                    <img src="images/hike-8.jpg" class="img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="An owl spotted near our campsite at Pardise Creek" alt="Image of an owl sitting on a tree branch.">
+                </div>
+            </div>
+            <div class="row">
+                <img src="images/hike-5.jpg" class="col-lg-6 img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Trail of Ten Falls in Oregon" alt="Image of a large waterfall and a trail behind it.">
+                <img src="images/hike-10.jpg" class="col-lg-6 img-fluid rounded mb-4" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Camping at Craters of the Moon in Idaho" alt="Image of two tents amongst black, ashy rocks with a pink sky in the background.">
+            </div>
+        </div>
+
+      <footer>
+          <i class="fa-solid fa-mountain-sun"></i>
+          <p>Page built by Julianne.</p>
+      </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+    <!--Script needed to initialize bootstrap popovers (https://getbootstrap.com/docs/5.0/components/popovers/)-->
+    <script>
+      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+      })
+    </script>
+    </body>
+</html>

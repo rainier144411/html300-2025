@@ -4,3 +4,22 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+nav {
+    display: flex;
+    background-color: #00A3AD;
+    color: #ffffff; 
+    border: 0.5px solid #707070;
+    padding: 2rem 1rem;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    justify-content: center;
+    padding: 0;
+}

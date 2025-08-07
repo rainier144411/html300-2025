@@ -135,8 +135,17 @@ img {
 }
 
 /*expands image size 2.5 times when hovering over the expand icon*/
-.fa-expand:hover + img {
+.fa-expand:hover ~ img {
     transform: scale(2.5);
+}
+
+/*https://www.youtube.com/watch?v=ocl4eN9IrD0*/
+.fa-expand:not(:hover) {
+    animation: z-index-hack 1000ms;
+}
+
+@keyframes z-index-hack {
+    0%, 100% {z-index: 0;}
 }
 
 .list-container {
