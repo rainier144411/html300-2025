@@ -1,0 +1,181 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-vue-next/dist/bootstrap-vue-next.css';
+
+// Import partials here
+@import 'base.normalize';
+@import 'settings.variables';
+@import 'settings.responsive';
+@import 'components.content';
+@import 'colors';
+
+.main {
+    font-family: Montserrat, Arial, sans-serif;
+    margin: 2rem;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "Barlow Condensed", Arial, sans-serif;
+    font-weight: bold;
+}
+
+header {
+    & i:nth-of-type(1) {
+    color: rgb(255,255,255);
+    transform: scale(1.5);
+    animation: changeColor 5s ease 0s 1;
+    }
+    & i:nth-of-type(2) {
+    color: rgb(255,255,255);
+    transform: scale(1.5);
+    animation: changeColor 5s ease 1s;
+    }
+    & i:nth-of-type(3) {
+    color: rgb(255,255,255);
+    transform: scale(1.5);
+    animation: changeColor 5s ease 3s;
+    }
+    & i:nth-of-type(4) {
+    color: rgb(255,255,255);
+    transform: scale(1.5);
+    animation: changeColor 5s ease 5s 1;
+    }
+}
+
+/*sets start and end colors for the changeColor animination*/
+@keyframes changeColor {
+    from{
+         color: rgba(47,79,79,.9);
+    }
+     to {
+         color: rgba(47,79,79,.1);
+    }
+}
+
+/*changes background color of the default bootstrap navbar*/
+.navbar {
+    background-color: $nav-background !important;
+}
+
+h3 {
+    font-family: Domine, serif;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+article {
+    padding: 20px 30px;
+}
+
+img {
+    transition: transform 1s linear; /*controls speed for the scaling transform*/
+}
+
+.img-container {
+    position: relative; /*for the overlap, parent element should have relative position*/
+}
+
+.fa-expand {
+    position: absolute; /*child element of overlay should have absolute position*/
+    right: 65px;
+    top: 10px;
+    padding: 2px;
+    background-color: rgba(255,255,255,.5); /*lighter background makes icon stand out against photo background*/
+    border-radius: 5%;
+    height: 20px;
+    width: 20px;
+    display: flex; /*flex container used to center the icon*/
+    justify-content: center; /*center icon horizontally*/
+    align-items: center; /*center icon vertically*/
+    cursor: pointer;
+    z-index:1; /*puts icon on top of the image so the hover is less jittery*/
+    &:hover {
+        opacity: 0; /*hides the icon after it's hovered on*/
+    }
+}
+
+/*expands image size 2.5 times when hovering over the expand icon*/
+.fa-expand:hover ~ img {
+    transform: scale(2.5);
+}
+
+/*hides icon during animation - https://www.youtube.com/watch?v=ocl4eN9IrD0*/
+.fa-expand:not(:hover){
+    animation: z-index-hack 1000ms;
+}
+
+@keyframes z-index-hack {
+    0%, 100% {z-index: 0;}
+}
+
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    & li {
+    font-size: 1.1em;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 14rem;
+    width: 14rem;
+    margin: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    }
+    & a {
+        font-size: 0.8em;
+    }
+    & a:visited {
+        color: $links-visited; 
+    }
+    & a:hover {
+        color: $links-hover
+    }
+}
+
+footer {
+    margin-top: 40px;
+    font-size:small;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    & p {
+        margin:0px;
+    }
+}
+
+.about-picture {
+    border-radius: 60%;
+}
+
+#gallery {
+    padding: 20px 30px;
+    & h2 {
+        margin-bottom: 2rem;
+    }
+}
+
+.about-me-grid {
+        padding: 20px 30px;
+        & #bio {
+            padding-right: 4rem;
+        }
+}
+
+.recipes-list section {
+    padding-top: 5rem;
+}
+
+/*changes the background color on the expanded accordian item to match navbar background*/
+.accordion-button:not(.collapsed) {
+    background-color: $nav-background !important;
+}
+
