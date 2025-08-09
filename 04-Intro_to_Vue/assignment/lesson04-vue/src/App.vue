@@ -1,4 +1,5 @@
 <script setup>
+  //Configure routes for the navigation between pages/components
   import{ ref, computed } from 'vue';
 
   import home from './components/home.vue';
@@ -63,7 +64,8 @@
       </div>
     </nav>
 
-    <component :is="currentView" id="app"/> <!--TO TOGGLE BETWEEN PAGES-->
+    <!--Navigates between pages/components (see script above)-->
+    <component :is="currentView" id="app"/> 
 
     <footer>
       <i class="fa-solid fa-mountain-sun"></i>

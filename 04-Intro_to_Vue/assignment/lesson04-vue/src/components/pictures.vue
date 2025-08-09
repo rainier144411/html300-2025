@@ -1,5 +1,7 @@
 <script setup>
     import {ref} from "vue";
+
+    //object of image info
     const imagesTopRow = ref([
         { src: "src/assets/images/hike-7.jpg", alt: "Image of tall, snowy mountain peaks on a cloudy day.", popover: "Rugged peaks of Slovenia" },
         { src: "src/assets/images/hike-9.jpg", alt: "Image of torquoise river flowing through a green mountainous landscape.", popover: "Socha Valley in Slovenia" },
@@ -23,21 +25,22 @@
         <div id="gallery">
             <h2>Pictures From My Hikes</h2>
             <div class="row">
-                <img v-for="image in imagesTopRow" :src="image.src" class="col-lg-6 img-fluid rounded mb-4" :v-b-popover.focus.bottom="image.popover" :alt="image.alt">
+                <!--use a "v-for" loop to iterate through an object of images (imagesTopRow), note popovers not working-->
+                <img v-for="image in imagesTopRow" :src="image.src" class="col-lg-6 img-fluid rounded mb-4" data-toggle="popover" data-placement="bottom" :data-content="image.popover" :alt="image.alt">
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <img v-for="image in imagesSecondRow" :src="image.src" class="img-fluid rounded mb-4" :v-b-popover.focus.bottom="image.popover" :alt="image.alt">
+                    <img v-for="image in imagesSecondRow" :src="image.src" class="img-fluid rounded mb-4" data-toggle="popover" data-placement="bottom" :data-content="image.popover" :alt="image.alt">
                 </div>
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <img v-for="image in imagesThirdRow" :src="image.src" class="img-fluid rounded mb-4" :v-b-popover.focus.bottom="image.popover" :alt="image.alt">
+                    <img v-for="image in imagesThirdRow" :src="image.src" class="img-fluid rounded mb-4" data-toggle="popover" data-placement="bottom" :data-content="image.popover" :alt="image.alt">
                 </div>
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <img v-for="image in imagesFourthRow" :src="image.src" class="img-fluid rounded mb-4" :v-b-popover.focus.bottom="image.popover" :alt="image.alt">
+                    <img v-for="image in imagesFourthRow" :src="image.src" class="img-fluid rounded mb-4" data-toggle="popover" data-placement="bottom" :data-content="image.popover" :alt="image.alt">
                 </div>
             </div>
             <div class="row">
-                <img v-for="image in imagesFifthRow" :src="image.src" class="col-lg-6 img-fluid rounded mb-4" :v-b-popover.focus.bottom="image.popover" :alt="image.alt">
+                <img v-for="image in imagesFifthRow" :src="image.src" class="col-lg-6 img-fluid rounded mb-4" data-toggle="popover" data-placement="bottom" :data-content="image.popover" :alt="image.alt">
             </div>
         </div>
     </div>

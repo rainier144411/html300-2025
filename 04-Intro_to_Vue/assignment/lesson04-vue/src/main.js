@@ -10,3 +10,5 @@ import "./main.scss";
 const app = createApp(App);
 app.use(createBootstrap());
 app.mount("#app");
+
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
