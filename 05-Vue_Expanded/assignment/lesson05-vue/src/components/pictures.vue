@@ -20,19 +20,9 @@
         { id: 10, src: "src/assets/images/hike-10.jpg", alt: "Image of two tents amongst black, ashy rocks with a pink sky in the background.", title: "Camping at Craters of the Moon in Idaho" }
     ])
 
-    /*import composable - not working 
+    //import composable
     import {toggle} from "../composable.js";
-
-    export default {
-        setup() {
-            const {hasBorder, toggle} = toggle();
-
-            return {
-                hasBorder,
-                toggle
-            }
-        }
-    };*/
+    const {hasBorder, selectedImg, toggleBorder} = toggle();
 </script>
 
 <template>
@@ -41,22 +31,22 @@
             <h2>Pictures From My Hikes</h2>
             <div class="row">
                 <!--use a "v-for" loop to iterate through an object of images (imagesTopRow) leveraging the imported picturesGallery component.
-                Attempted to add border when image is clicked with this addition to to images :style="hasBorder ? 'border: 2px solid black' : 'border: none'" @click="toggle()"-->
-                <PicturesGallery v-for="image in imagesTopRow" :key="image.id" :src="image.src" :title="image.title" :alt="image.alt" class="col-lg-6 img-fluid rounded mb-4"></PicturesGallery>
+                Uses composable.js to add border when image is clicked. The ternary operation on style ensures only the selected image gets a border when an image is clicked on-->
+                <PicturesGallery v-for="image in imagesTopRow" :key="image.id" :src="image.src" :title="image.title" :alt="image.alt" class="col-lg-6 img-fluid rounded mb-4" :style="selectedImg === image.id & hasBorder ? 'border: 4px solid black' : 'border: none'" @click="toggleBorder(image.id)"></PicturesGallery>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <PicturesGallery v-for="image in imagesSecondRow" :key="image.id" :src="image.src" :title="image.title" :alt="image.alt" class="img-fluid rounded mb-4"></PicturesGallery>
+                    <PicturesGallery v-for="image in imagesSecondRow" :key="image.id" :src="image.src" :title="image.title" :alt="image.alt" class="img-fluid rounded mb-4" :style="selectedImg === image.id & hasBorder ? 'border: 4px solid black' : 'border: none'" @click="toggleBorder(image.id)"></PicturesGallery>
                 </div>
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <PicturesGallery v-for="image in imagesThirdRow" :key="image.id" :src="image.src" :title="image.title" :alt="image.alt" class="img-fluid rounded mb-4"></PicturesGallery>
+                    <PicturesGallery v-for="image in imagesThirdRow" :key="image.id" :src="image.src" :title="image.title" :alt="image.alt" class="img-fluid rounded mb-4" :style="selectedImg === image.id & hasBorder ? 'border: 4px solid black' : 'border: none'" @click="toggleBorder(image.id)"></PicturesGallery>
                 </div>
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <PicturesGallery v-for="image in imagesFourthRow" :key="image.id" :src="image.src" :title="image.title" :alt="image.alt" class="img-fluid rounded mb-4"></PicturesGallery>
+                    <PicturesGallery v-for="image in imagesFourthRow" :key="image.id" :src="image.src" :title="image.title" :alt="image.alt" class="img-fluid rounded mb-4" :style="selectedImg === image.id & hasBorder ? 'border: 4px solid black' : 'border: none'" @click="toggleBorder(image.id)"></PicturesGallery>
                 </div>
             </div>
             <div class="row">
-                <PicturesGallery v-for="image in imagesFifthRow" :key="image.id" :src="image.src" :title="image.title" :alt="image.alt" class="col-lg-6 img-fluid rounded mb-4"></PicturesGallery>
+                <PicturesGallery v-for="image in imagesFifthRow" :key="image.id" :src="image.src" :title="image.title" :alt="image.alt" class="col-lg-6 img-fluid rounded mb-4" :style="selectedImg === image.id & hasBorder ? 'border: 4px solid black' : 'border: none'" @click="toggleBorder(image.id)"></PicturesGallery>
             </div>
         </div>
     </div>
