@@ -21,7 +21,7 @@
     ])
 
     //import composable
-    import {toggle} from "../composable.js";
+    import {toggle} from "../composables/useImageBorderToggle.js";
     const {hasBorder, selectedImg, toggleBorder} = toggle();
 </script>
 
