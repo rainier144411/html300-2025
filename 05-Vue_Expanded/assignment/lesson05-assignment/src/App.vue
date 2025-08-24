@@ -1,12 +1,13 @@
 <script setup>
-  //Configure routes for the navigation between pages/components
-  import{ ref, computed } from 'vue';
-
+  //import components
   import home from './components/home.vue';
   import pictures from './components/pictures.vue';
   import snacks from './components/snacks.vue';
   import about from './components/about.vue';
   import headerComponent from './components/header.vue'
+
+  //Configure routes for the navigation between pages/components
+  import{ ref, computed } from 'vue';
 
   const routes = {
     "/": home,
@@ -28,11 +29,12 @@
 
 <template>
   <div class="main">
-    <!--Examples of named slots of default slot-->
+    <!--Examples of named slots and default slot-->
     <headerComponent>
       <template v-slot:header>Outdoor Adventures on Foot</template>
       <!-- Animated foot prints when page loads-->
       <template v-slot:animatedFootprints></template>
+      <!--h3 element below is the default slot-->
       <h3>A guide to my favorite hikes and backpacking trips and yummy bites to eat along the trail.</h3>
     </headerComponent>
 

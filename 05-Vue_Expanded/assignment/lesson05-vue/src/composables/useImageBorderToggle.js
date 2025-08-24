@@ -1,5 +1,4 @@
-
-import {ref, computed} from 'vue';
+import {ref} from 'vue';
 
 export function toggle() {
   const hasBorder = ref(false); //no border until clicked

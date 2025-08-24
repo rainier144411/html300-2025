@@ -1,14 +1,20 @@
+<script setup>
+//import animatedFootprints component
+import animatedFootprints from './animatedFootprints.vue';
+</script>
+
 <template>
-    <!--Header component with named slots-->
+    <!--Header component with named slots, header and animatedFootptints-->
     <header class="header-container">
         <h1>
             <slot name="header"></slot>
         </h1>
         <slot name="animatedFootprints">
-            <i class="fa-solid fa-shoe-prints"></i><i class="fa-solid fa-shoe-prints"></i><i class="fa-solid fa-shoe-prints"></i><i class="fa-solid fa-shoe-prints"></i>
+            <!--animatedFootprints component-->
+            <animatedFootprints></animatedFootprints>
         </slot>
     </header>
-    <!--Default slot-->
+    <!--Default slot used for subheader (h3) text-->
     <slot></slot>
     
 </template>

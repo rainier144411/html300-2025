@@ -10,7 +10,10 @@
 
 .main {
     font-family: Montserrat, Arial, sans-serif;
-    margin: 2rem;
+    margin: .1rem;
+    @include media-query(med){
+        margin: 1rem;
+    }
     box-sizing: border-box;
 }
 
@@ -70,7 +73,7 @@ h3 {
 }
 
 article {
-    padding: 20px 30px;
+    padding: 10px 15px;
 }
 
 .list-container {
@@ -80,10 +83,9 @@ article {
     & li {
     font-size: 1.1em;
     box-sizing: border-box;
-    padding: 10px;
-    height: 14rem;
-    width: 14rem;
-    margin: 1.5rem;
+    /*padding: 10px;*/
+    height: 100%;
+    /*margin: 1.5rem;*/
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -115,13 +117,6 @@ footer {
     border-radius: 60%;
 }
 
-#gallery {
-    padding: 20px 30px;
-    & h2 {
-        margin-bottom: 2rem;
-    }
-}
-
 .about-me-grid {
         padding: 20px 30px;
         & #bio {
@@ -144,8 +139,4 @@ footer {
 
 .snack-buttons {
     margin-top: 3rem;
-}
-
-.addBorder {
-    border: 5px solid black;
 }

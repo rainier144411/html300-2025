@@ -3,6 +3,7 @@
 </template>
 
 <style scoped>
+    /*animation of footprint icons*/
     i:nth-of-type(1) {
     color: rgb(255,255,255);
     transform: scale(1.5);
